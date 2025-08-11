@@ -5,38 +5,59 @@ const Home = () => {
   const services = [
     {
       id: 1,
-      title: "CCTV System Solutions",
-      description: "We offer a comprehensive range of CCTV camera systems from traditional wired analog cameras to modern IP and wireless solutions. We provide the technology to protect your home or business.",
-      image: "/Oursrvices/CCTVH2.jpg",
-      link: "/contact"
+      title: "Complete Computer Setup",
+      description: "Professional computer setup services including hardware installation, software configuration, and system optimization for both home and business use.",
+      image: "/Oursrvices/systemsolution.jpg",
+      link: "/complete-computer-setup"
     },
     {
       id: 2,
-      title: "Alarm System Solutions",
-      description: "We offer a comprehensive range of reliable alarm systems to protect your property. Our wireless and hybrid solutions provide flexibility and ease of installation.",
-      image: "/Oursrvices/alarmsolution.jpg",
-      link: "/contact"
+      title: "Computer Repairs",
+      description: "Expert computer repair services for all types of hardware and software issues. Fast, reliable, and cost-effective solutions.",
+      image: "/Techeye/tech1.jpg",
+      link: "/computer-repairs"
     },
     {
       id: 3,
-      title: "Access Control Solutions",
-      description: "Enhance your security and streamline operations with our advanced access control and time attendance solutions. Our systems provide seamless integration.",
-      image: "/Oursrvices/accesscontrolsolution..jpg",
-      link: "/contact"
+      title: "Networking",
+      description: "Complete networking solutions including LAN setup, WiFi installation, network security, and infrastructure management.",
+      image: "/Oursrvices/systemsolution.jpg",
+      link: "/networking"
     },
     {
       id: 4,
-      title: "Video Intercom System",
-      description: "Improve communication and security with our advanced video intercom systems. Our systems enhance convenience and security for managing visitors.",
-      image: "/Oursrvices/viedio intercome solution.jpg",
-      link: "/contact"
+      title: "Server Maintenance",
+      description: "Professional server maintenance and management services ensuring optimal performance and security for your business infrastructure.",
+      image: "/Techeye/tech2.jpg",
+      link: "/server-maintenance"
     },
     {
       id: 5,
-      title: "Network Solutions",
-      description: "Enhance your connectivity and productivity with our reliable network solutions. Our expert team will design and install a network solution tailored to your specific needs.",
-      image: "/Oursrvices/systemsolution.jpg",
-      link: "/contact"
+      title: "CCTV Installation",
+      description: "Professional CCTV camera installation services with modern IP and wireless solutions for comprehensive security coverage.",
+      image: "/Oursrvices/CCTVH2.jpg",
+      link: "/cctv-installation"
+    },
+    {
+      id: 6,
+      title: "IP PBX",
+      description: "Advanced IP PBX phone systems for modern business communication with features like call forwarding, voicemail, and conference calling.",
+      image: "/Oursrvices/viedio intercome solution.jpg",
+      link: "/ip-pbx"
+    },
+    {
+      id: 7,
+      title: "Data Recovery",
+      description: "Professional data recovery services for all types of storage devices. Recover lost, deleted, or corrupted data safely and securely.",
+      image: "/Techeye/tech1.jpg",
+      link: "/data-recovery"
+    },
+    {
+      id: 8,
+      title: "Maintenance Contract-AMC",
+      description: "Annual Maintenance Contracts (AMC) for comprehensive system maintenance, regular checkups, and priority support services.",
+      image: "/Techeye/tech2.jpg",
+      link: "/maintenance-contract-amc"
     }
   ];
 
@@ -87,7 +108,7 @@ const Home = () => {
                 <span className="block text-blue-300">Sri Lanka</span>
               </h1>
               <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                We offer a comprehensive range of CCTV camera systems from traditional wired analog cameras to modern IP and wireless solutions.
+                We offer a comprehensive range of IT and security solutions from computer setup to CCTV systems, ensuring complete protection for your home and business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
@@ -97,10 +118,10 @@ const Home = () => {
                   Get a Free Quote
                 </Link>
                 <Link 
-                  to="/about"
+                  to="/all-services"
                   className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors text-center animate-scale-in"
                 >
-                  Explore Our Projects
+                  View All Services
                 </Link>
               </div>
             </div>
@@ -127,11 +148,11 @@ const Home = () => {
               Our Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your Trusted Partner in Security & Communication Solutions
+              Your Trusted Partner in IT & Security Solutions
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div 
                 key={service.id} 
@@ -149,14 +170,14 @@ const Home = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3 animate-fade-in-left">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 animate-fade-in-right">
+                  <p className="text-gray-600 mb-4 animate-fade-in-right text-sm">
                     {service.description}
                   </p>
                   <Link 
                     to={service.link}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium animate-fade-in-up"
                   >
-                    View more
+                    Read More
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -164,6 +185,18 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+          
+          <div className="text-center mt-12 animate-fade-in-up">
+            <Link 
+              to="/all-services"
+              className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
+            >
+              View All Services
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -177,20 +210,31 @@ const Home = () => {
                 Your Trusted Partner for Comprehensive Solutions
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                At CCTV Security, we're dedicated to providing innovative and reliable solutions for both domestic and industrial clients in Sri Lanka. With a wide range of services under one roof, we're your one-stop destination for all your needs.
+                At CCTV Security, we're dedicated to providing innovative and reliable solutions for both domestic and industrial clients in Sri Lanka. With a wide range of services under one roof, we're your one-stop destination for all your IT and security needs.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From state-of-the-art security systems to advanced communication solutions, our expertise spans across various industries. Our commitment to excellence ensures that we deliver top-quality services that meet and exceed your expectations.
+                From state-of-the-art security systems to advanced IT solutions, our expertise spans across various industries. Our commitment to excellence ensures that we deliver top-quality services that meet and exceed your expectations.
               </p>
-              <Link 
-                to="/about"
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center animate-bounce-in"
-              >
-                Learn More About Us
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to="/about"
+                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center animate-bounce-in"
+                >
+                  Learn More About Us
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link 
+                  to="/all-services"
+                  className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors inline-flex items-center animate-scale-in"
+                >
+                  Explore Our Services
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
             <div className="relative animate-fade-in-right">
               <img 
@@ -215,7 +259,7 @@ const Home = () => {
               Our Results
             </h2>
             <p className="text-xl text-blue-100">
-              Your Trusted Partner in Security & Communication Solutions
+              Your Trusted Partner in IT & Security Solutions
             </p>
           </div>
           
@@ -242,7 +286,7 @@ const Home = () => {
               Why Choose Us
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your Trusted Partner in Security & Communication Solutions
+              Your Trusted Partner in IT & Security Solutions
             </p>
           </div>
           
@@ -266,10 +310,10 @@ const Home = () => {
       <section className="py-20 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6 animate-fade-in-up">
-            Ready to Secure Your Property?
+            Ready to Get Started?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            Get in touch with us today for a free consultation and quote. Our expert team is ready to help you choose the perfect security solution.
+            Get in touch with us today for a free consultation and quote. Our expert team is ready to help you choose the perfect solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
             <Link 
@@ -277,6 +321,12 @@ const Home = () => {
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors animate-bounce-in"
             >
               Get Free Quote
+            </Link>
+            <Link 
+              to="/all-services"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors animate-scale-in"
+            >
+              View All Services
             </Link>
             <a 
               href="tel:+94706063010"

@@ -40,13 +40,24 @@ const Header = () => {
               Home
             </Link>
             <Link 
+              to="/all-services" 
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive('/all-services') 
+                  ? 'text-blue-600 bg-blue-50' 
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+              } animate-fade-in-up`}
+              style={{animationDelay: '0.2s'}}
+            >
+              All Services
+            </Link>
+            <Link 
               to="/about" 
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive('/about') 
                   ? 'text-blue-600 bg-blue-50' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
               } animate-fade-in-up`}
-              style={{animationDelay: '0.2s'}}
+              style={{animationDelay: '0.3s'}}
             >
               About Us
             </Link>
@@ -57,7 +68,7 @@ const Header = () => {
                   ? 'text-blue-600 bg-blue-50' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
               } animate-fade-in-up`}
-              style={{animationDelay: '0.3s'}}
+              style={{animationDelay: '0.4s'}}
             >
               Contact Us
             </Link>
@@ -65,7 +76,7 @@ const Header = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-6 animate-fade-in-right">
-            <div className="text-right animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div className="text-right animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <p className="text-sm text-gray-600">Call us today</p>
               <p className="text-lg font-semibold text-blue-600">+94 70 606 3010</p>
             </div>
@@ -109,11 +120,21 @@ const Header = () => {
                 Home
               </Link>
               <Link 
+                to="/all-services" 
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive('/all-services') ? 'text-blue-600 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+                } animate-fade-in-left`}
+                style={{animationDelay: '0.2s'}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                All Services
+              </Link>
+              <Link 
                 to="/about" 
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   isActive('/about') ? 'text-blue-600 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                 } animate-fade-in-left`}
-                style={{animationDelay: '0.2s'}}
+                style={{animationDelay: '0.3s'}}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
@@ -123,12 +144,12 @@ const Header = () => {
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   isActive('/contact') ? 'text-blue-600 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                 } animate-fade-in-left`}
-                style={{animationDelay: '0.3s'}}
+                style={{animationDelay: '0.4s'}}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us
               </Link>
-              <div className="pt-4 border-t border-gray-200 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="pt-4 border-t border-gray-200 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
                 <p className="px-3 py-2 text-sm text-gray-600">Call us: +94 70 606 3010</p>
                 <Link 
                   to="/contact" 
