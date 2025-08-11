@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -95,14 +95,45 @@ const Home = () => {
     }
   ];
 
+  // Banner slider images
+  const slides = [
+    "/Home/CCTVH2.jpg",
+    "/Oursrvices/systemsolution.jpg",
+    "/Oursrvices/alarmsolution.jpg",
+    "/Oursrvices/accesscontrolsolution..jpg",
+    "/Oursrvices/viedio intercome solution.jpg",
+    "/Techeye/tech2.jpg"
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [slides.length]);
+
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-left">
+      {/* Hero Section - Banner Slider */}
+      <section className="relative text-white">
+        <div className="relative h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
+          {slides.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`Banner ${idx + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-black/50" />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div className="max-w-2xl">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
                 Your Complete Security Partner in
                 <span className="block text-blue-300">Sri Lanka</span>
@@ -113,29 +144,38 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/contact"
-                  className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors text-center animate-bounce-in"
+                  className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors text-center"
                 >
                   Get a Free Quote
                 </Link>
                 <Link 
                   to="/all-services"
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors text-center animate-scale-in"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors text-center"
                 >
                   View All Services
                 </Link>
               </div>
             </div>
-            <div className="relative animate-fade-in-right">
-              <img 
-                src="/Home/CCTVH2.jpg" 
-                alt="CCTV Security Solutions" 
-                className="rounded-lg shadow-2xl animate-float"
+          </div>
+
+          {/* Controls */}
+          <button onClick={prevSlide} aria-label="Previous slide" className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button onClick={nextSlide} aria-label="Next slide" className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+
+          {/* Dots */}
+          <div className="absolute z-10 bottom-5 left-0 right-0 flex justify-center gap-2">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                aria-label={`Go to slide ${idx + 1}`}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-2.5 rounded-full transition-all ${idx === currentSlide ? 'w-8 bg-white' : 'w-2.5 bg-white/60 hover:bg-white/90'}`}
               />
-              <div className="absolute -bottom-6 -left-6 bg-white text-blue-900 p-4 rounded-lg shadow-lg animate-bounce-in">
-                <p className="text-sm font-medium">Trusted by 500+ Customers</p>
-                <p className="text-xs text-gray-600">Across Sri Lanka</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

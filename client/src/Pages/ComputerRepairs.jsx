@@ -2,245 +2,239 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ComputerRepairs = () => {
-  const repairServices = [
-    {
-      icon: "💻",
-      title: "Hardware Repairs",
-      description: "Repair and replacement of faulty components including motherboards, processors, RAM, and storage devices."
-    },
-    {
-      icon: "🔧",
-      title: "Software Issues",
-      description: "Virus removal, operating system repair, driver updates, and software troubleshooting."
-    },
-    {
-      icon: "🖥️",
-      title: "Laptop Repairs",
-      description: "Specialized laptop repair services including screen replacement, keyboard repair, and battery replacement."
-    },
-    {
-      icon: "⚡",
-      title: "Power Issues",
-      description: "Diagnosis and repair of power supply problems, charging issues, and electrical faults."
-    },
-    {
-      icon: "🌐",
-      title: "Network Problems",
-      description: "Internet connectivity issues, WiFi problems, and network configuration troubleshooting."
-    },
-    {
-      icon: "🔄",
-      title: "Data Recovery",
-      description: "Recovery of lost or deleted data from various storage devices and systems."
-    }
-  ];
-
-  const commonIssues = [
-    "Computer won't turn on",
-    "Blue screen errors",
-    "Slow performance",
-    "Virus and malware",
-    "Hardware failures",
-    "Software crashes",
-    "Internet connectivity issues",
-    "Noise from computer"
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-left">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                Computer Repairs
-              </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                Fast, reliable, and professional computer repair services. We fix all types of computer issues with guaranteed results.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/contact"
-                  className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors text-center"
-                >
-                  Get Free Diagnosis
-                </Link>
-                <a 
-                  href="tel:+94706063010"
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors text-center"
-                >
-                  Emergency Repair
-                </a>
-              </div>
-            </div>
-            <div className="relative animate-fade-in-right">
-              <img 
-                src="/Techeye/tech1.jpg" 
-                alt="Computer Repair Services" 
-                className="rounded-lg shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Our Repair Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive repair solutions for all computer problems
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {repairServices.map((service, index) => (
-              <div 
-                key={index} 
-                className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow animate-fade-in-up"
-                style={{animationDelay: `${0.1 * index}s`}}
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Common Issues Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-in-left">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Common Computer Issues We Fix
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                {commonIssues.map((issue, index) => (
-                  <div key={index} className="flex items-center space-x-3 animate-fade-in-left" style={{animationDelay: `${0.1 * index}s`}}>
-                    <svg className="w-5 h-5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                    </svg>
-                    <span className="text-gray-700">{issue}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative animate-fade-in-right">
-              <img 
-                src="/Techeye/tech2.jpg" 
-                alt="Computer Troubleshooting" 
-                className="rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Our Repair Process
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Simple and efficient repair process to get your computer back to working condition
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Diagnosis</h3>
-              <p className="text-gray-600">Free initial diagnosis to identify the problem</p>
-            </div>
-            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Quote</h3>
-              <p className="text-gray-600">Transparent pricing with no hidden costs</p>
-            </div>
-            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Repair</h3>
-              <p className="text-gray-600">Professional repair by certified technicians</p>
-            </div>
-            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Testing</h3>
-              <p className="text-gray-600">Comprehensive testing to ensure quality</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our Repair Service?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional, reliable, and cost-effective computer repair solutions
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <div className="bg-blue-600 text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">⚡</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Fast Service</h3>
-              <p className="text-gray-600">Quick turnaround time with same-day service for urgent repairs</p>
-            </div>
-            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              <div className="bg-blue-600 text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">💰</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Affordable</h3>
-              <p className="text-gray-600">Competitive pricing with no hidden costs or surprise fees</p>
-            </div>
-            <div className="text-center animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              <div className="bg-blue-600 text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">🛡️</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Warranty</h3>
-              <p className="text-gray-600">90-day warranty on all repairs and replacement parts</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 animate-fade-in-up">
-            Computer Not Working?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            Don't wait! Contact us today for a free diagnosis and quote. Our expert technicians are ready to help.
+      <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+            Computer Repairs
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            Expert computer repair services for all types of hardware and software issues. Fast, reliable, and cost-effective solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <Link 
-              to="/contact"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+          <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <Link
+              to="/contact-us"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block mr-4"
             >
-              Get Free Diagnosis
+              Get Quote
             </Link>
-            <a 
-              href="tel:+94706063010"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+            <a
+              href="tel:+1234567890"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-block"
             >
-              Call Now: +94 70 606 3010
+              Emergency Repair
             </a>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Photo Gallery Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Computer Repair Services</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="group overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="/Service/computer repair/computer repairs  (1).jpg" 
+                alt="Computer Repair Service 1" 
+                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Hardware Repairs</h3>
+                <p className="text-gray-600">Expert repair of motherboards, power supplies, hard drives, and other hardware components.</p>
+              </div>
+            </div>
+            <div className="group overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="/Service/computer repair/computer repairs  (2).jpg" 
+                alt="Computer Repair Service 2" 
+                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Software Troubleshooting</h3>
+                <p className="text-gray-600">Diagnosis and repair of software issues, virus removal, and system optimization.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Computer Repair Overview Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Computer Repair Services</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Why Computer Repairs Are Essential</h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                These days, there are very few households where there is no laptop and desktop that might require occasional trouble-shooting for a number of issues. This device is handy and light weight for carrying from one place to another. You can easily carry a sizable amount of data and information to the office on a laptop.
+              </p>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                However, at the possibility of even the tiniest of issues there can be potential threat to the security of all important details stored in the device. Stopped functionality requires the laptop and desktop repairs for keeping the device operational.
+              </p>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                The trickiest task about repairing a laptop is probably the situation in which the problem is related to its screen. Be it the damage caused due to dropping of the laptop accidentally on floor or may be some internal problem leading to complete or partial blackout of the laptop screen, the owner of the device needs to spend considerable amount of time fixing it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* eSight Technology Services Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">What We Can Do For You</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-600">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Laptop and Desktop Repairing</h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                <strong>eSight Technology</strong> focus on offering seamless solution to all problems related to laptops and desktops and troubles occurred in different parts of these devices. The company takes care of repair services for different kinds of computer devices owned individually at homes or at small business organizations.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Comprehensive Solutions</h4>
+                  <p className="text-gray-600">Seamless solutions for all laptop and desktop problems across different device components.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Home & Business Support</h4>
+                  <p className="text-gray-600">Repair services for individual home users and small business organizations.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Screen Repair Specialists</h4>
+                  <p className="text-gray-600">Expert handling of laptop screen damage and display issues.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Security Protection</h4>
+                  <p className="text-gray-600">Protect your important data and device security during repairs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Services Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Repair Services We Offer</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div className="text-4xl mb-4">💻</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Hardware Repairs</h3>
+              <p className="text-gray-600">Motherboard, CPU, RAM, power supply, and peripheral device repairs.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div className="text-4xl mb-4">🖥️</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Laptop Repairs</h3>
+              <p className="text-gray-600">Screen replacement, keyboard repair, battery replacement, and more.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div className="text-4xl mb-4">🦠</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Virus Removal</h3>
+              <p className="text-gray-600">Complete malware and virus removal with system protection setup.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Performance Issues</h3>
+              <p className="text-gray-600">Slow computer diagnosis and optimization for better speed.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div className="text-4xl mb-4">🔧</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Software Problems</h3>
+              <p className="text-gray-600">Operating system issues, driver problems, and application errors.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div className="text-4xl mb-4">💾</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Data Recovery</h3>
+              <p className="text-gray-600">Recovery of lost or deleted files from damaged storage devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Benefits Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose Our Repair Service?</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-5xl mb-4">⚡</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Fast Service</h3>
+              <p className="text-gray-600">Quick diagnosis and repair to get your computer back working ASAP.</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-4">👨‍💼</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Expert Technicians</h3>
+              <p className="text-gray-600">Certified professionals with years of repair experience.</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-4">🔒</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Warranty</h3>
+              <p className="text-gray-600">All repairs come with a comprehensive warranty.</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-4">💰</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Affordable</h3>
+              <p className="text-gray-600">Competitive pricing with no hidden fees.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Process Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Repair Process</h2>
+          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Diagnosis</h3>
+              <p className="text-gray-600">Thorough examination to identify the root cause of the problem.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Quote</h3>
+              <p className="text-gray-600">Detailed cost breakdown with no surprise charges.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Repair</h3>
+              <p className="text-gray-600">Professional repair using quality parts and tools.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Testing</h3>
+              <p className="text-gray-600">Comprehensive testing to ensure everything works perfectly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-16 bg-blue-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Need Computer Repair?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Contact us today for fast, reliable computer repair services. Our expert technicians are ready to help!
+          </p>
+          <div className="space-x-4">
+            <Link
+              to="/contact-us"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
+            >
+              Get Free Quote
+            </Link>
+            <a
+              href="tel:+1234567890"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-block"
+            >
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
