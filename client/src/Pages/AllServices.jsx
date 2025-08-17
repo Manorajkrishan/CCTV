@@ -7,7 +7,7 @@ const AllServices = () => {
       id: 1,
       title: "Complete Computer Setup",
       description: "Professional computer setup services including hardware installation, software configuration, and system optimization for both home and business use.",
-      image: "/Oursrvices/systemsolution.jpg",
+      image: "/Service/complete computer setup/computersetup (1).jpg",
       link: "/complete-computer-setup",
       icon: "💻"
     },
@@ -15,7 +15,7 @@ const AllServices = () => {
       id: 2,
       title: "Computer Repairs",
       description: "Expert computer repair services for all types of hardware and software issues. Fast, reliable, and cost-effective solutions.",
-      image: "/Oursrvices/tech1.jpg",
+      image: "/Service/computer repair/computer repairs  (1).jpg",
       link: "/computer-repairs",
       icon: "🔧"
     },
@@ -23,7 +23,7 @@ const AllServices = () => {
       id: 3,
       title: "Networking",
       description: "Complete networking solutions including LAN setup, WiFi installation, network security, and infrastructure management.",
-      image: "/Oursrvices/systemsolution.jpg",
+      image: "/Service/Networking/com.jpg",
       link: "/networking",
       icon: "🌐"
     },
@@ -31,7 +31,7 @@ const AllServices = () => {
       id: 4,
       title: "Server Maintenance",
       description: "Professional server maintenance and management services ensuring optimal performance and security for your business infrastructure.",
-      image: "/Oursrvices/tech2.jpg",
+      image: "/Service/Server/server_129.jpg",
       link: "/server-maintenance",
       icon: "🖥️"
     },
@@ -39,7 +39,7 @@ const AllServices = () => {
       id: 5,
       title: "CCTV Installation",
       description: "Professional CCTV camera installation services with modern IP and wireless solutions for comprehensive security coverage.",
-      image: "/Oursrvices/CCTVH2.jpg",
+      image: "/Service/CCTV install/1745060392756.jpg",
       link: "/cctv-installation",
       icon: "📹"
     },
@@ -47,7 +47,7 @@ const AllServices = () => {
       id: 6,
       title: "IP PBX",
       description: "Advanced IP PBX phone systems for modern business communication with features like call forwarding, voicemail, and conference calling.",
-      image: "/Oursrvices/viedio intercome solution.jpg",
+      image: "/Service/ip pbx/telecom-about.jpg",
       link: "/ip-pbx",
       icon: "📞"
     },
@@ -55,7 +55,7 @@ const AllServices = () => {
       id: 7,
       title: "Data Recovery",
       description: "Professional data recovery services for all types of storage devices. Recover lost, deleted, or corrupted data safely and securely.",
-      image: "/Oursrvices/tech1.jpg",
+      image: "/Service/Data recovery/Data-Recovery-Process.jpg",
       link: "/data-recovery",
       icon: "💾"
     },
@@ -63,7 +63,7 @@ const AllServices = () => {
       id: 8,
       title: "Maintenance Contract-AMC",
       description: "Annual Maintenance Contracts (AMC) for comprehensive system maintenance, regular checkups, and priority support services.",
-      image: "/Oursrvices/tech2.jpg",
+      image: "/Service/contract/sign-a-contract-1200x557-1.jpeg",
       link: "/maintenance-contract-amc",
       icon: "📋"
     }

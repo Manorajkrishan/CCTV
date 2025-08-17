@@ -3,9 +3,21 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
+
+  const services = [
+    { name: "Complete Computer Setup", link: "/complete-computer-setup" },
+    { name: "Computer Repairs", link: "/computer-repairs" },
+    { name: "Networking", link: "/networking" },
+    { name: "Server Maintenance", link: "/server-maintenance" },
+    { name: "CCTV Installation", link: "/cctv-installation" },
+    { name: "IP PBX", link: "/ip-pbx" },
+    { name: "Data Recovery", link: "/data-recovery" },
+    { name: "Maintenance Contract-AMC", link: "/maintenance-contract-amc" }
+  ];
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -39,17 +51,44 @@ const Header = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/all-services" 
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/all-services') 
-                  ? 'text-blue-600 bg-blue-50' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-              } animate-fade-in-up`}
-              style={{animationDelay: '0.2s'}}
+            
+            {/* Services Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesDropdownOpen(true)}
+              onMouseLeave={() => setIsServicesDropdownOpen(false)}
             >
-              All Services
-            </Link>
+              <button 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center ${
+                  isActive('/all-services') 
+                    ? 'text-blue-600 bg-blue-50' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                } animate-fade-in-up`}
+                style={{animationDelay: '0.2s'}}
+              >
+                All Services
+                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Dropdown Menu */}
+              {isServicesDropdownOpen && (
+                <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 animate-fade-in-down">
+                  {services.map((service, index) => (
+                    <Link
+                      key={service.name}
+                      to={service.link}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                      style={{animationDelay: `${0.1 * index}s`}}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            
             <Link 
               to="/about" 
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -119,16 +158,34 @@ const Header = () => {
               >
                 Home
               </Link>
-              <Link 
-                to="/all-services" 
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  isActive('/all-services') ? 'text-blue-600 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
-                } animate-fade-in-left`}
-                style={{animationDelay: '0.2s'}}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                All Services
-              </Link>
+              
+              {/* Mobile Services Dropdown */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                  className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 flex items-center justify-between"
+                >
+                  All Services
+                  <svg className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isServicesDropdownOpen && (
+                  <div className="pl-4 space-y-1">
+                    {services.map((service, index) => (
+                      <Link
+                        key={service.name}
+                        to={service.link}
+                        className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+              
               <Link 
                 to="/about" 
                 className={`block px-3 py-2 rounded-md text-base font-medium ${

@@ -7,56 +7,56 @@ const Home = () => {
       id: 1,
       title: "Complete Computer Setup",
       description: "Professional computer setup services including hardware installation, software configuration, and system optimization for both home and business use.",
-      image: "/Oursrvices/systemsolution.jpg",
+      image: "/Service/complete computer setup/computersetup (1).jpg",
       link: "/complete-computer-setup"
     },
     {
       id: 2,
       title: "Computer Repairs",
       description: "Expert computer repair services for all types of hardware and software issues. Fast, reliable, and cost-effective solutions.",
-      image: "/Techeye/tech1.jpg",
+      image: "/Service/computer repair/computer repairs  (1).jpg",
       link: "/computer-repairs"
     },
     {
       id: 3,
       title: "Networking",
       description: "Complete networking solutions including LAN setup, WiFi installation, network security, and infrastructure management.",
-      image: "/Oursrvices/systemsolution.jpg",
+      image: "/Service/Networking/com.jpg",
       link: "/networking"
     },
     {
       id: 4,
       title: "Server Maintenance",
       description: "Professional server maintenance and management services ensuring optimal performance and security for your business infrastructure.",
-      image: "/Techeye/tech2.jpg",
+      image: "/Service/Server/server_129.jpg",
       link: "/server-maintenance"
     },
     {
       id: 5,
       title: "CCTV Installation",
       description: "Professional CCTV camera installation services with modern IP and wireless solutions for comprehensive security coverage.",
-      image: "/Oursrvices/CCTVH2.jpg",
+      image: "/Service/CCTV install/1745060392756.jpg",
       link: "/cctv-installation"
     },
     {
       id: 6,
       title: "IP PBX",
       description: "Advanced IP PBX phone systems for modern business communication with features like call forwarding, voicemail, and conference calling.",
-      image: "/Oursrvices/viedio intercome solution.jpg",
+      image: "/Service/ip pbx/telecom-about.jpg",
       link: "/ip-pbx"
     },
     {
       id: 7,
       title: "Data Recovery",
       description: "Professional data recovery services for all types of storage devices. Recover lost, deleted, or corrupted data safely and securely.",
-      image: "/Techeye/tech1.jpg",
+      image: "/Service/Data recovery/Data-Recovery-Process.jpg",
       link: "/data-recovery"
     },
     {
       id: 8,
       title: "Maintenance Contract-AMC",
       description: "Annual Maintenance Contracts (AMC) for comprehensive system maintenance, regular checkups, and priority support services.",
-      image: "/Techeye/tech2.jpg",
+      image: "/Service/contract/sign-a-contract-1200x557-1.jpeg",
       link: "/maintenance-contract-amc"
     }
   ];
@@ -97,12 +97,18 @@ const Home = () => {
 
   // Banner slider images
   const slides = [
-    "/Home/CCTVH2.jpg",
-    "/Oursrvices/systemsolution.jpg",
-    "/Oursrvices/alarmsolution.jpg",
-    "/Oursrvices/accesscontrolsolution..jpg",
-    "/Oursrvices/viedio intercome solution.jpg",
-    "/Techeye/tech2.jpg"
+    {
+      image: "/Home/CCTVH2.jpg",
+      title: "Your Complete Security Partner in",
+      subtitle: "Sri Lanka",
+      description: "We offer a comprehensive range of IT and security solutions from computer setup to CCTV systems, ensuring complete protection for your home and business."
+    },
+    {
+      image: "/Oursrvices/alarmsolution.jpg",
+      title: "Professional Alarm Systems &",
+      subtitle: "Security Solutions",
+      description: "Advanced alarm systems and security solutions to protect your property with 24/7 monitoring and instant alerts."
+    }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -125,7 +131,7 @@ const Home = () => {
           {slides.map((src, idx) => (
             <img
               key={idx}
-              src={src}
+              src={src.image}
               alt={`Banner ${idx + 1}`}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'}`}
             />
@@ -135,11 +141,13 @@ const Home = () => {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
             <div className="max-w-2xl">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                Your Complete Security Partner in
-                <span className="block text-blue-300">Sri Lanka</span>
+                {slides[currentSlide].title}
+                <span className="block text-blue-300">
+                  {slides[currentSlide].subtitle}
+                </span>
               </h1>
               <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                We offer a comprehensive range of IT and security solutions from computer setup to CCTV systems, ensuring complete protection for your home and business.
+                {slides[currentSlide].description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 

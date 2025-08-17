@@ -15,13 +15,13 @@ const DataRecovery = () => {
           </p>
           <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             <Link
-              to="/contact-us"
+              to="/contact"
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block mr-4"
             >
               Get Quote
             </Link>
             <a
-              href="tel:+1234567890"
+              href="tel:+94706063010"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-block"
             >
               Emergency Recovery
@@ -30,8 +30,28 @@ const DataRecovery = () => {
         </div>
       </div>
 
-      {/* Photo Gallery Section */}
+      {/* Main Content Section */}
       <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Data Recovery Services</h2>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                <strong>eSight Technology</strong> has been restoring lost data for clients for over a decade. Hard disk recovery, recovering deleted files, restoring lost data from failed RAID arrays are all routine services for our company.
+              </p>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                We can work with all brands and model hard drives, including Seagate, Western Digital, Hitachi, Fujitsu, Toshiba, and many others. We are the hard drive recovery professionals you need.
+              </p>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                We will exhaust every possible option in our effort to recover your lost information. We can tackle the most extreme cases of media failure. All of our work is backed by a 100% customer satisfaction guarantee.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Photo Gallery Section */}
+      <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Data Recovery Solutions</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -62,7 +82,7 @@ const DataRecovery = () => {
       </div>
 
       {/* Services Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Data Recovery Services We Offer</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -101,7 +121,7 @@ const DataRecovery = () => {
       </div>
 
       {/* Benefits Section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose Our Data Recovery Service?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -130,7 +150,7 @@ const DataRecovery = () => {
       </div>
 
       {/* Process Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Data Recovery Process</h2>
           <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
@@ -167,13 +187,13 @@ const DataRecovery = () => {
           </p>
           <div className="space-x-4">
             <Link
-              to="/contact-us"
+              to="/contact"
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
             >
               Get Free Quote
             </Link>
             <a
-              href="tel:+1234567890"
+              href="tel:+94706063010"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-block"
             >
               Call Now

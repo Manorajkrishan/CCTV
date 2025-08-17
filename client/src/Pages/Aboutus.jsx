@@ -38,20 +38,50 @@ const Aboutus = () => {
     {
       name: "John Doe",
       position: "CEO & Founder",
-      image: "/Techeye/tech2.jpg",
-      description: "15+ years of experience in security systems and business management."
+      avatar: "👨‍💼",
+      description: "15+ years of experience in security systems and business management.",
+      email: "john@cctvsecurity.lk",
+      phone: "+94 70 606 3010"
     },
     {
       name: "Jane Smith",
       position: "Technical Director",
-      image: "/Techeye/tech1.jpg",
-      description: "Expert in CCTV technology and system integration with 12+ years experience."
+      avatar: "👩‍💻",
+      description: "Expert in CCTV technology and system integration with 12+ years experience.",
+      email: "jane@cctvsecurity.lk",
+      phone: "+94 70 606 3011"
     },
     {
       name: "Mike Johnson",
       position: "Operations Manager",
-      image: "/Techeye/tech2.jpg",
-      description: "Specializes in project management and customer service excellence."
+      avatar: "👨‍🔧",
+      description: "Specializes in project management and customer service excellence.",
+      email: "mike@cctvsecurity.lk",
+      phone: "+94 70 606 3012"
+    },
+    {
+      name: "Sarah Wilson",
+      position: "Senior Security Engineer",
+      avatar: "👩‍🔬",
+      description: "Certified security professional with expertise in advanced surveillance systems.",
+      email: "sarah@cctvsecurity.lk",
+      phone: "+94 70 606 3013"
+    },
+    {
+      name: "David Brown",
+      position: "Network Specialist",
+      avatar: "👨‍💻",
+      description: "Network infrastructure expert with deep knowledge of enterprise security solutions.",
+      email: "david@cctvsecurity.lk",
+      phone: "+94 70 606 3014"
+    },
+    {
+      name: "Lisa Chen",
+      position: "Customer Success Manager",
+      avatar: "👩‍💼",
+      description: "Dedicated to ensuring customer satisfaction and building long-term relationships.",
+      email: "lisa@cctvsecurity.lk",
+      phone: "+94 70 606 3015"
     }
   ];
 
@@ -204,18 +234,40 @@ const Aboutus = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow animate-fade-in-up" style={{animationDelay: `${0.2 + index * 0.1}s`}}>
-                <div className="h-64 overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover animate-scale-in"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 animate-fade-in-left">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-3 animate-fade-in-right">{member.position}</p>
-                  <p className="text-gray-600 animate-fade-in-up">{member.description}</p>
+              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: `${0.1 * index}s`}}>
+                <div className="p-8 text-center">
+                  {/* Avatar */}
+                  <div className="relative mx-auto mb-6">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
+                      <div className="text-4xl font-bold text-blue-600 flex items-center justify-center h-full">
+                        {member.avatar}
+                      </div>
+                    </div>
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Member Info */}
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+                  <p className="text-blue-600 font-medium mb-4">{member.position}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{member.description}</p>
+                  
+                  {/* Contact Info */}
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center justify-center text-gray-500">
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span>{member.email}</span>
+                    </div>
+                    <div className="flex items-center justify-center text-gray-500">
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <span>{member.phone}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
