@@ -117,7 +117,8 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-6 animate-fade-in-right">
             <div className="text-right animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <p className="text-sm text-gray-600">Call us today</p>
-              <p className="text-lg font-semibold text-blue-600">+94 70 606 3010</p>
+              <p className="text-lg font-semibold text-blue-600">+94 703978967/68</p>
+              
             </div>
             <Link 
               to="/contact" 

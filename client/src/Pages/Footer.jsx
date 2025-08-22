@@ -133,7 +133,7 @@ const Footer = () => {
               <div className="space-y-2 text-sm text-gray-300">
                 <p className="animate-fade-in-left" style={{animationDelay: '0.6s'}}>📞 +94 70 606 3010</p>
                 <p className="animate-fade-in-left" style={{animationDelay: '0.7s'}}>✉️ sales@cctvsecurity.lk</p>
-                <p className="animate-fade-in-left" style={{animationDelay: '0.8s'}}>📍 Boralesgamuwa, Sri Lanka</p>
+                <p className="animate-fade-in-left" style={{animationDelay: '0.8s'}}>📍 Bandiyamulla, 397 Colombo Rd, Gampaha 11000, Sri Lanka</p>
               </div>
             </div>
           </div>
