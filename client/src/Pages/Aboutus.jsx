@@ -36,52 +36,50 @@ const Aboutus = () => {
 
   const team = [
     {
-      name: "John Doe",
-      position: "CEO & Founder",
+      name: "Thulash Lakmal",
+      position: "IT Admin",
       avatar: "👨‍💼",
       description: "15+ years of experience in security systems and business management.",
-      email: "john@cctvsecurity.lk",
-      phone: "+94 70 606 3010"
+      email: "lakmal@esighttechnology.com",
+      phone: "+94 706978967"
     },
     {
-      name: "Jane Smith",
-      position: "Technical Director",
+      name: "Randika Supun",
+      position: "IT Admin",
       avatar: "👩‍💻",
       description: "Expert in CCTV technology and system integration with 12+ years experience.",
-      email: "jane@cctvsecurity.lk",
-      phone: "+94 70 606 3011"
+      email: "randika@esighttechnology.com",
+      phone: "+94 706978968"
     },
     {
-      name: "Mike Johnson",
-      position: "Operations Manager",
+      name: "Mahesh Mangala",
+      position: "Marketing / Operation Manager",
       avatar: "👨‍🔧",
       description: "Specializes in project management and customer service excellence.",
-      email: "mike@cctvsecurity.lk",
-      phone: "+94 70 606 3012"
+    
+      phone: "+94 706978920"
     },
     {
-      name: "Sarah Wilson",
-      position: "Senior Security Engineer",
+      name: "Fathima",
+      position: "Accounts",
       avatar: "👩‍🔬",
       description: "Certified security professional with expertise in advanced surveillance systems.",
-      email: "sarah@cctvsecurity.lk",
-      phone: "+94 70 606 3013"
+      phone: "+94 706978970"
     },
     {
-      name: "David Brown",
-      position: "Network Specialist",
+      name: "Krishantha Gayan",
+      position: "Operation ",
       avatar: "👨‍💻",
       description: "Network infrastructure expert with deep knowledge of enterprise security solutions.",
-      email: "david@cctvsecurity.lk",
       phone: "+94 70 606 3014"
     },
     {
-      name: "Lisa Chen",
-      position: "Customer Success Manager",
+      name: "Dilshan Kumara",
+      position: " Technical Support",
       avatar: "👩‍💼",
       description: "Dedicated to ensuring customer satisfaction and building long-term relationships.",
-      email: "lisa@cctvsecurity.lk",
-      phone: "+94 70 606 3015"
+      
+      phone: "+94 706978969"
     }
   ];
 
