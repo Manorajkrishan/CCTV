@@ -55,8 +55,8 @@ const Contactus = () => {
     {
       icon: "✉️",
       title: "Email Address",
-      details: ["info@cctvsecurity.lk"],
-      link: "mailto:info@cctvsecurity.lk"
+      details: ["info@esighttechnology.com"],
+      link: "mailto:info@esighttechnology.com"
     },
     {
       icon: "📍",
@@ -124,10 +124,10 @@ const Contactus = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-down">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6">
             Get in Touch
           </h1>
-          <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
             Have questions or need assistance? Fill out the form below, and our friendly team will get back to you promptly.
           </p>
         </div>
@@ -138,13 +138,13 @@ const Contactus = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-lg shadow-lg animate-fade-in-left">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Send us a Message
               </h2>
               
               {submitSuccess && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg animate-bounce-in">
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
                   <p className="font-semibold">Thank you for your message!</p>
                   <p>We'll get back to you within 24 hours.</p>
                 </div>
@@ -152,7 +152,7 @@ const Contactus = () => {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+                  <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                       First Name *
                     </label>
@@ -168,7 +168,7 @@ const Contactus = () => {
                     />
                   </div>
                   
-                  <div className="animate-fade-in-up" style={{animationDelay: '0.15s'}}>
+                  <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
                       Last Name *
                     </label>
@@ -186,7 +186,7 @@ const Contactus = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                  <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address *
                     </label>
@@ -202,7 +202,7 @@ const Contactus = () => {
                     />
                   </div>
                   
-                  <div className="animate-fade-in-up" style={{animationDelay: '0.25s'}}>
+                  <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number *
                     </label>
@@ -219,7 +219,7 @@ const Contactus = () => {
                   </div>
                 </div>
 
-                <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+                <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message *
                   </label>
@@ -235,7 +235,7 @@ const Contactus = () => {
                   ></textarea>
                 </div>
 
-                <div className="animate-fade-in-up" style={{animationDelay: '0.35s'}}>
+                <div>
                   <label className="flex items-center">
                     <input
                       type="checkbox"
@@ -254,8 +254,7 @@ const Contactus = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed animate-fade-in-up"
-                  style={{animationDelay: '0.4s'}}
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending Message...' : 'Send Message'}
                 </button>
@@ -263,14 +262,14 @@ const Contactus = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-8 animate-fade-in-right">
-              <div className="bg-white p-8 rounded-lg shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <div className="space-y-8">
+              <div className="bg-white p-8 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Contact Information
                 </h2>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
-                    <div key={index} className="flex items-start space-x-4 animate-fade-in-left" style={{animationDelay: `${0.3 + index * 0.05}s`}}>
+                    <div key={index} className="flex items-start space-x-4">
                       <div className="text-2xl">{info.icon}</div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
@@ -291,13 +290,13 @@ const Contactus = () => {
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-6 rounded-lg animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="bg-blue-50 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Our Services
                 </h3>
                 <ul className="space-y-2">
                   {services.map((service, index) => (
-                    <li key={index} className="flex items-center text-gray-600 animate-fade-in-left" style={{animationDelay: `${0.5 + index * 0.05}s`}}>
+                    <li key={index} className="flex items-center text-gray-600">
                       <svg className="w-4 h-4 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -307,7 +306,7 @@ const Contactus = () => {
                 </ul>
               </div>
 
-              <div className="bg-gray-100 p-6 rounded-lg animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+              <div className="bg-gray-100 p-6 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Business Hours
                 </h3>
@@ -326,7 +325,7 @@ const Contactus = () => {
       {/* Map Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Find Us
             </h2>
@@ -335,12 +334,12 @@ const Contactus = () => {
             </p>
           </div>
           
-          <div className="bg-gray-200 h-96 rounded-lg overflow-hidden animate-fade-in-up shadow-lg" style={{animationDelay: '0.2s'}}>
+          <div className="bg-gray-200 h-96 rounded-lg overflow-hidden shadow-lg">
             <div id="map" className="w-full h-full"></div>
           </div>
           
           {/* Address Details */}
-          <div className="mt-8 text-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+          <div className="mt-8 text-center">
             <div className="bg-blue-50 p-6 rounded-lg inline-block">
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Office Address</h3>
               <p className="text-gray-700 text-lg">
@@ -358,22 +357,22 @@ const Contactus = () => {
       {/* CTA Section */}
       <section className="py-20 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 animate-fade-in-up">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Don't wait to secure your property. Contact us today for a free consultation and quote.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="tel:+94703978967"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors animate-bounce-in"
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Call Now: +94 703978967
             </a>
             <a 
-              href="mailto:info@cctvsecurity.lk"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors animate-scale-in"
+              href="mailto:info@esighttechnology.com"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
             >
               Send Email
             </a>

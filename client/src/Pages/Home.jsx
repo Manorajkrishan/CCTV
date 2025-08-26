@@ -1,17 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Home = () => {
-  // Refs for sections
-  const heroRef = useRef(null);
-  const servicesRef = useRef(null);
-  const aboutRef = useRef(null);
-  const statsRef = useRef(null);
-  const featuresRef = useRef(null);
-  const ctaRef = useRef(null);
-
   // Banner auto-passing state
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -43,306 +33,6 @@ const Home = () => {
   // Navigation functions
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-
-  // GSAP Animations
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero section entrance animation
-    gsap.fromTo(heroRef.current, 
-      { opacity: 0, y: 100 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1.5,
-        ease: "power3.out"
-      }
-    );
-
-    // Hero text animations
-    gsap.fromTo(heroRef.current.querySelector('h1'), 
-      { opacity: 0, x: -100 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1,
-        delay: 0.5,
-        ease: "power3.out"
-      }
-    );
-
-    gsap.fromTo(heroRef.current.querySelector('p'), 
-      { opacity: 0, x: -100 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1,
-        delay: 0.8,
-        ease: "power3.out"
-      }
-    );
-
-    gsap.fromTo(heroRef.current.querySelector('.flex.flex-col'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        delay: 1.1,
-        ease: "power3.out"
-      }
-    );
-
-    // Services section scroll animations
-    gsap.fromTo(servicesRef.current.querySelector('h2'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    gsap.fromTo(servicesRef.current.querySelector('p'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Service cards stagger animation
-    gsap.fromTo(servicesRef.current.querySelectorAll('.grid > div'), 
-      { opacity: 0, y: 100, scale: 0.8 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // About section scroll animations
-    gsap.fromTo(aboutRef.current.querySelector('h2'), 
-      { opacity: 0, x: -100 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    gsap.fromTo(aboutRef.current.querySelectorAll('p'), 
-      { opacity: 0, x: -100 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    gsap.fromTo(aboutRef.current.querySelector('.relative'), 
-      { opacity: 0, x: 100, scale: 0.8 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        scale: 1,
-        duration: 1.2,
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Stats section scroll animations
-    gsap.fromTo(statsRef.current.querySelector('h2'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    gsap.fromTo(statsRef.current.querySelector('p'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Stats numbers stagger animation with GSAP
-    gsap.fromTo(statsRef.current.querySelectorAll('.grid > div'), 
-      { opacity: 0, y: 100, scale: 0.5 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Features section scroll animations
-    gsap.fromTo(featuresRef.current.querySelector('h2'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: featuresRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    gsap.fromTo(featuresRef.current.querySelector('p'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: featuresRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Features cards stagger animation
-    gsap.fromTo(featuresRef.current.querySelectorAll('.grid > div'), 
-      { opacity: 0, y: 100, scale: 0.8 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: featuresRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // CTA section scroll animations
-    gsap.fromTo(ctaRef.current.querySelector('h2'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    gsap.fromTo(ctaRef.current.querySelector('p'), 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // CTA buttons stagger animation
-    gsap.fromTo(ctaRef.current.querySelectorAll('.flex.flex-col > *'), 
-      { opacity: 0, y: 100, scale: 0.8 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-  }, []);
 
   // Services data
   const services = [
@@ -443,7 +133,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Auto-Passing Banner */}
-      <section ref={heroRef} className="relative text-white">
+      <section className="relative text-white">
         <div className="relative h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
           {/* Banner slides */}
           {slides.map((slide, idx) => (
@@ -510,7 +200,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -555,7 +245,7 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -605,7 +295,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section ref={statsRef} className="py-20 bg-blue-900">
+      <section className="py-20 bg-blue-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -628,7 +318,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -661,7 +351,7 @@ const Home = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section ref={ctaRef} className="py-20 bg-blue-600">
+      <section className="py-20 bg-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Get Started?
@@ -669,31 +359,25 @@ const Home = () => {
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Get in touch with us today for a free consultation and quote. Our expert team is ready to help you choose the perfect solution.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <div className="transition-transform duration-200 hover:scale-105 active:scale-95">
-              <Link 
-                to="/contact"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-              >
-                Get Free Quote
-              </Link>
-            </div>
-            <div className="transition-transform duration-200 hover:scale-105 active:scale-95">
-              <Link 
-                to="/all-services"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                View All Services
-              </Link>
-            </div>
-            <div className="transition-transform duration-200 hover:scale-105 active:scale-95">
-              <a 
-                href="tel:+94703978967"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                Call Now: +94 703978967
-              </a>
-            </div>
+          <div className="flex flex-col gap-4 justify-center items-center">
+            <Link 
+              to="/contact"
+              className="w-full sm:w-auto bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors text-center"
+            >
+              Get Free Quote
+            </Link>
+            <Link 
+              to="/all-services"
+              className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
+            >
+              View All Services
+            </Link>
+            <a 
+              href="tel:+94703978967"
+              className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
+            >
+              Call Now: +94 703978967
+            </a>
           </div>
         </div>
       </section>

@@ -39,7 +39,7 @@ const Aboutus = () => {
       name: "Thulash Lakmal",
       position: "IT Admin",
       avatar: "👨‍💼",
-      description: "15+ years of experience in security systems and business management.",
+      description: "5+ years of experience in security systems and business management.",
       email: "lakmal@esighttechnology.com",
       phone: "+94 706978967"
     },
@@ -47,31 +47,31 @@ const Aboutus = () => {
       name: "Mahesh Mangala",
       position: "Marketing / Operation",
       avatar: "👨‍💼",
-      description: "Specializes in project management and customer service excellence.",
+      description: "5+ years of experience in project management and customer service excellence.",
       email: "mahesh@esighttechnology.com",
       phone: "+94 706978920"
     },
     {
       name: "Supul Eduwara",
-      position: "Technical Support",
+      position: "Network & CCTV Support",
       avatar: "👨‍💼",
-      description: "Expert in CCTV technology and system integration with 12+ years experience.",
+      description: "5+ years of experience in networking and CCTV system integration.",
       email: "info@esighttechnology.com",
       phone: "+94 706978972"
     },
     {
       name: "Dilshan Kumara",
-      position: "Technical Support",
+      position: "CCTV Specialist",
       avatar: "👨‍💼",
-      description: "Network infrastructure expert with deep knowledge of enterprise security solutions.",
+      description: "5+ years of experience in CCTV technology and surveillance systems.",
       email: "info@esighttechnology.com",
       phone: "+94 706978969"
     },
     {
       name: "Pasan Madushanka",
-      position: "Technical Support",
+      position: "Computer Systems Specialist",
       avatar: "👨‍💼",
-      description: "Dedicated to ensuring customer satisfaction and building long-term relationships.",
+      description: "5+ years of experience in computer systems and technical support.",
       email: "info@esighttechnology.com",
       phone: "+94 706978968"
     },
@@ -79,7 +79,7 @@ const Aboutus = () => {
       name: "Fathima",
       position: "Accounts",
       avatar: "👩‍💼",
-      description: "Certified security professional with expertise in advanced surveillance systems.",
+      description: "5+ years of experience in financial management and accounting systems.",
       email: "accounts@esighttechnology.com",
       phone: "+94 706978970"
     }
@@ -90,10 +90,10 @@ const Aboutus = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in-down">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
             About eSight Technology
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto px-2 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto px-2">
             Your trusted partner in comprehensive security solutions across Sri Lanka
           </p>
         </div>
@@ -103,7 +103,7 @@ const Aboutus = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <div className="animate-fade-in-left order-2 lg:order-1">
+            <div className="order-2 lg:order-1">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Our Story
               </h2>
@@ -117,13 +117,13 @@ const Aboutus = () => {
                 Today, we're proud to serve over 500 satisfied customers across the island, with a team of experienced professionals dedicated to providing the best security solutions for homes, businesses, and institutions.
               </p>
             </div>
-            <div className="relative animate-fade-in-right order-1 lg:order-2 mb-8 lg:mb-0">
+            <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
               <img 
-                src="/Home/CCTVH2.jpg" 
+                src="/aboutus/abt.jpg" 
                 alt="eSight Technology Office" 
-                className="w-full h-auto rounded-lg shadow-xl animate-float"
+                className="w-full h-auto rounded-lg shadow-xl"
               />
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-blue-600 text-white p-4 sm:p-6 rounded-lg animate-bounce-in">
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-blue-600 text-white p-4 sm:p-6 rounded-lg">
                 <p className="text-xl sm:text-2xl font-bold">10+</p>
                 <p className="text-xs sm:text-sm">Years of Excellence</p>
               </div>
@@ -136,15 +136,15 @@ const Aboutus = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg animate-fade-in-up">
-              <div className="text-3xl sm:text-4xl mb-4 animate-bounce-in">🎯</div>
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+              <div className="text-3xl sm:text-4xl mb-4">🎯</div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 To provide innovative, reliable, and affordable security solutions that protect what matters most to our customers, while maintaining the highest standards of quality and service excellence.
               </p>
             </div>
-            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              <div className="text-3xl sm:text-4xl mb-4 animate-bounce-in">🔮</div>
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+              <div className="text-3xl sm:text-4xl mb-4">🔮</div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Vision</h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 To be the leading security solutions provider in Sri Lanka, known for innovation, reliability, and customer satisfaction, while contributing to a safer and more secure society.
@@ -157,7 +157,7 @@ const Aboutus = () => {
       {/* Company Values */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Core Values
             </h2>
@@ -168,12 +168,12 @@ const Aboutus = () => {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center animate-fade-in-up" style={{animationDelay: `${0.1 * index}s`}}>
-                <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 animate-bounce-in">{value.icon}</div>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 animate-fade-in-left">
+              <div key={index} className="text-center">
+                <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{value.icon}</div>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
                   {value.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 animate-fade-in-right leading-relaxed px-1">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed px-1">
                   {value.description}
                 </p>
               </div>
@@ -185,7 +185,7 @@ const Aboutus = () => {
       {/* Timeline */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Journey
             </h2>
@@ -202,9 +202,9 @@ const Aboutus = () => {
               {milestones.map((milestone, index) => (
                 <div key={index} className={`relative flex items-center ${
                   index % 2 === 0 ? 'lg:justify-start' : 'lg:justify-end'
-                } animate-fade-in-up`} style={{animationDelay: `${0.1 * index}s`}}>
+                }`}>
                   <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : 'lg:pl-8 lg:text-left'}`}>
-                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg animate-scale-in">
+                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
                       <div className="text-xl sm:text-2xl font-bold text-blue-600 mb-2">{milestone.year}</div>
                       <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{milestone.title}</h3>
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{milestone.description}</p>
@@ -212,7 +212,7 @@ const Aboutus = () => {
                   </div>
                   
                   {/* Timeline dot - hidden on mobile */}
-                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg animate-bounce-in"></div>
+                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
                 </div>
               ))}
             </div>
@@ -223,7 +223,7 @@ const Aboutus = () => {
       {/* Team Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Meet Our Team
             </h2>
@@ -236,15 +236,14 @@ const Aboutus = () => {
               <img 
                 src="/aboutus/team.jpg" 
                 alt="eSight Technology Team" 
-                className="w-full h-auto rounded-lg shadow-xl animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
+                className="w-full h-auto rounded-lg shadow-xl"
               />
             </div>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {team.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: `${0.1 * index}s`}}>
+              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="p-6 sm:p-8 text-center">
                   {/* Avatar */}
                   <div className="relative mx-auto mb-4 sm:mb-6">
@@ -288,28 +287,28 @@ const Aboutus = () => {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 animate-fade-in-up">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-2 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
             Get in touch with us today for a free consultation and quote. Our expert team is ready to help you choose the perfect solution.
           </p>
-          <div className="flex flex-col gap-4 justify-center items-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+          <div className="flex flex-col gap-4 justify-center items-center">
             <Link 
               to="/contact"
-              className="w-full sm:w-auto bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors animate-bounce-in text-center"
+              className="w-full sm:w-auto bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors text-center"
             >
               Get Free Quote
             </Link>
             <Link 
               to="/services"
-              className="w-full sm:w-auto bg-blue-600 text-white border-2 border-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-600 transition-colors animate-scale-in text-center"
+              className="w-full sm:w-auto bg-blue-600 text-white border-2 border-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
             >
               View All Services
             </Link>
             <a 
               href="tel:+94703978967"
-              className="w-full sm:w-auto bg-blue-600 text-white border-2 border-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-600 transition-colors animate-scale-in text-center"
+              className="w-full sm:w-auto bg-blue-600 text-white border-2 border-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-600 transition-colors text-center"
             >
               Call Now: +94 703978967
             </a>

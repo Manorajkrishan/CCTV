@@ -7,13 +7,13 @@ const CCTVInstallation = () => {
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             CCTV Installation
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Professional CCTV installation services for homes and businesses. High-quality surveillance systems with remote monitoring capabilities.
           </p>
-          <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <div>
             <Link
               to="/contact-us"
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block mr-4"

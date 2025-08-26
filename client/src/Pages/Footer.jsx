@@ -32,16 +32,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-1 animate-fade-in-up">
-            <div className="flex items-center space-x-2 mb-6 animate-fade-in-left">
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-2 mb-6">
               <img 
                 src="/Home/logo.png" 
                 alt="eSight Technology Logo" 
-                className="h-10 w-auto animate-bounce-in"
+                className="h-10 w-auto"
               />
               <div>
-                <h3 className="text-xl font-bold animate-fade-in-up">eSight Technology</h3>
-                <p className="text-sm text-gray-400 animate-fade-in-up" style={{animationDelay: '0.1s'}}>Your Complete Security Partner</p>
+                <h3 className="text-xl font-bold">eSight Technology</h3>
+                <p className="text-sm text-gray-400">Your Complete Security Partner</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -79,11 +79,11 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-            <h4 className="text-lg font-semibold mb-6 text-white animate-fade-in-left">Services</h4>
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-white">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((service, index) => (
-                <li key={index} className="animate-fade-in-left" style={{animationDelay: `${0.2 + index * 0.05}s`}}>
+                <li key={index}>
                   <Link 
                     to={service.link}
                     className="text-gray-300 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transition-transform duration-300"
@@ -96,11 +96,11 @@ const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            <h4 className="text-lg font-semibold mb-6 text-white animate-fade-in-left">Company</h4>
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-white">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((item, index) => (
-                <li key={index} className="animate-fade-in-left" style={{animationDelay: `${0.3 + index * 0.05}s`}}>
+                <li key={index}>
                   <Link 
                     to={item.link}
                     className="text-gray-300 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transition-transform duration-300"
@@ -113,11 +113,11 @@ const Footer = () => {
           </div>
 
           {/* Support & Contact */}
-          <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-            <h4 className="text-lg font-semibold mb-6 text-white animate-fade-in-left">Support</h4>
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-white">Support</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((item, index) => (
-                <li key={index} className="animate-fade-in-left" style={{animationDelay: `${0.4 + index * 0.05}s`}}>
+                <li key={index}>
                   <a 
                     href={item.link}
                     className="text-gray-300 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transition-transform duration-300"
@@ -128,13 +128,13 @@ const Footer = () => {
               ))}
             </ul>
             
-            <div className="mt-6 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+            <div className="mt-6">
               <h5 className="text-sm font-semibold text-white mb-3">Contact Info</h5>
               <div className="space-y-2 text-sm text-gray-300">
-                <p className="animate-fade-in-left" style={{animationDelay: '0.6s'}}>📞 +94 703978967</p>
-                <p className="animate-fade-in-left" style={{animationDelay: '0.7s'}}>📞 +94 703978968</p>
-                <p className="animate-fade-in-left" style={{animationDelay: '0.8s'}}>✉️ info@cctvsecurity.lk</p>
-                <p className="animate-fade-in-left" style={{animationDelay: '0.9s'}}>📍 Bandiyamulla, 397 Colombo Rd, Gampaha 11000, Sri Lanka</p>
+                <p>📞 +94 703978967</p>
+                <p>📞 +94 703978968</p>
+                <p>✉️ info@esighttechnology.com</p>
+                <p>📍 Bandiyamulla, 397 Colombo Rd, Gampaha 11000, Sri Lanka</p>
               </div>
             </div>
           </div>
@@ -145,10 +145,10 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400 animate-fade-in-left">
+            <div className="text-sm text-gray-400">
               © {currentYear} eSight Technology. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm text-gray-400 animate-fade-in-right">
+            <div className="flex space-x-6 text-sm text-gray-400">
               <a href="#" className="hover:text-white transition-colors hover:translate-x-1 inline-block transition-transform duration-300">
                 Privacy Policy
               </a>
@@ -168,7 +168,7 @@ const Footer = () => {
              {/* Back to Top Button */}
        <button 
          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-         className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 animate-bounce-in hover:scale-110 transition-transform duration-300"
+         className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 hover:scale-110 transition-transform duration-300"
          aria-label="Back to top"
        >
          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
