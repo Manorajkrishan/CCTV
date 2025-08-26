@@ -14,12 +14,19 @@ import CCTVInstallation from './Pages/CCTVInstallation';
 import IPPBX from './Pages/IPPBX';
 import DataRecovery from './Pages/DataRecovery';
 import MaintenanceContractAMC from './Pages/MaintenanceContractAMC';
+import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
 function App() {
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true
+      }}
+    >
       <div className="App">
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

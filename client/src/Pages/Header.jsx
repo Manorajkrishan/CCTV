@@ -28,11 +28,11 @@ const Header = () => {
             <Link to="/" className="flex items-center space-x-2">
               <img 
                 src="/Home/logo.png" 
-                alt="CCTV Security Logo" 
+                alt="eSight Technology Logo" 
                 className="h-12 w-auto animate-bounce-in"
               />
               <div className="hidden sm:block">
-                <h1 className="text-2xl font-bold text-gray-800 animate-fade-in-up">CCTV Security</h1>
+                <h1 className="text-2xl font-bold text-gray-800 animate-fade-in-up">eSight Technology</h1>
                 <p className="text-sm text-gray-600 animate-fade-in-up" style={{animationDelay: '0.1s'}}>Your Complete Security Partner</p>
               </div>
             </Link>
@@ -75,16 +75,15 @@ const Header = () => {
               {/* Dropdown Menu */}
               {isServicesDropdownOpen && (
                 <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 animate-fade-in-down">
-                  {services.map((service, index) => (
-                    <Link
-                      key={service.name}
-                      to={service.link}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                      style={{animationDelay: `${0.1 * index}s`}}
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
+                                     {services.map((service) => (
+                     <Link
+                       key={service.name}
+                       to={service.link}
+                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                     >
+                       {service.name}
+                     </Link>
+                   ))}
                 </div>
               )}
             </div>
@@ -117,8 +116,8 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-6 animate-fade-in-right">
             <div className="text-right animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <p className="text-sm text-gray-600">Call us today</p>
-              <p className="text-lg font-semibold text-blue-600">+94 703978967/68</p>
-              
+              <p className="text-lg font-semibold text-blue-600">+94 703978967</p>
+              <p className="text-sm text-gray-600">+94 703978968</p>
             </div>
             <Link 
               to="/contact" 
@@ -173,7 +172,7 @@ const Header = () => {
                 </button>
                 {isServicesDropdownOpen && (
                   <div className="pl-4 space-y-1">
-                    {services.map((service, index) => (
+                    {services.map((service) => (
                       <Link
                         key={service.name}
                         to={service.link}
@@ -207,16 +206,16 @@ const Header = () => {
               >
                 Contact Us
               </Link>
-              <div className="pt-4 border-t border-gray-200 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-                <p className="px-3 py-2 text-sm text-gray-600">Call us: +94 70 606 3010</p>
-                <Link 
-                  to="/contact" 
-                  className="block mx-3 mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition-colors animate-bounce-in"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Get Free Quote
-                </Link>
-              </div>
+                             <div className="pt-4 border-t border-gray-200 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+                 <p className="px-3 py-2 text-sm text-gray-600">Call us: +94 703978967</p>
+                 <Link 
+                   to="/contact" 
+                   className="block mx-3 mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition-colors animate-bounce-in"
+                   onClick={() => setIsMenuOpen(false)}
+                 >
+                   Get Free Quote
+                 </Link>
+               </div>
             </div>
           </div>
         )}

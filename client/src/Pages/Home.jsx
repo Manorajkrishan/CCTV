@@ -1,7 +1,350 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Home = () => {
+  // Refs for sections
+  const heroRef = useRef(null);
+  const servicesRef = useRef(null);
+  const aboutRef = useRef(null);
+  const statsRef = useRef(null);
+  const featuresRef = useRef(null);
+  const ctaRef = useRef(null);
+
+  // Banner auto-passing state
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Banner slides data - using pictures from public/Home folder
+  const slides = [
+    {
+      image: '/Home/CCTVH2.jpg',
+      title: 'Your Complete Security Partner in',
+      subtitle: 'Sri Lanka',
+      description: 'We offer a comprehensive range of IT and security solutions from computer setup to CCTV systems, ensuring complete protection for your home and business.'
+    },
+    {
+      image: '/Home/joe-gadd-DYLsNF8hNho-unsplash.jpg',
+      title: 'Professional Security Systems &',
+      subtitle: 'Advanced Technology',
+      description: 'State-of-the-art security solutions with cutting-edge technology to protect your home and business with the highest level of security.'
+    }
+  ];
+
+  // Auto-advance slides every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  // Navigation functions
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  // GSAP Animations
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero section entrance animation
+    gsap.fromTo(heroRef.current, 
+      { opacity: 0, y: 100 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1.5,
+        ease: "power3.out"
+      }
+    );
+
+    // Hero text animations
+    gsap.fromTo(heroRef.current.querySelector('h1'), 
+      { opacity: 0, x: -100 },
+      { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1,
+        delay: 0.5,
+        ease: "power3.out"
+      }
+    );
+
+    gsap.fromTo(heroRef.current.querySelector('p'), 
+      { opacity: 0, x: -100 },
+      { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1,
+        delay: 0.8,
+        ease: "power3.out"
+      }
+    );
+
+    gsap.fromTo(heroRef.current.querySelector('.flex.flex-col'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        delay: 1.1,
+        ease: "power3.out"
+      }
+    );
+
+    // Services section scroll animations
+    gsap.fromTo(servicesRef.current.querySelector('h2'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    gsap.fromTo(servicesRef.current.querySelector('p'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Service cards stagger animation
+    gsap.fromTo(servicesRef.current.querySelectorAll('.grid > div'), 
+      { opacity: 0, y: 100, scale: 0.8 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // About section scroll animations
+    gsap.fromTo(aboutRef.current.querySelector('h2'), 
+      { opacity: 0, x: -100 },
+      { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1,
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    gsap.fromTo(aboutRef.current.querySelectorAll('p'), 
+      { opacity: 0, x: -100 },
+      { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    gsap.fromTo(aboutRef.current.querySelector('.relative'), 
+      { opacity: 0, x: 100, scale: 0.8 },
+      { 
+        opacity: 1, 
+        x: 0, 
+        scale: 1,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Stats section scroll animations
+    gsap.fromTo(statsRef.current.querySelector('h2'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    gsap.fromTo(statsRef.current.querySelector('p'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Stats numbers stagger animation with GSAP
+    gsap.fromTo(statsRef.current.querySelectorAll('.grid > div'), 
+      { opacity: 0, y: 100, scale: 0.5 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Features section scroll animations
+    gsap.fromTo(featuresRef.current.querySelector('h2'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        scrollTrigger: {
+          trigger: featuresRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    gsap.fromTo(featuresRef.current.querySelector('p'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: featuresRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Features cards stagger animation
+    gsap.fromTo(featuresRef.current.querySelectorAll('.grid > div'), 
+      { opacity: 0, y: 100, scale: 0.8 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: featuresRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // CTA section scroll animations
+    gsap.fromTo(ctaRef.current.querySelector('h2'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    gsap.fromTo(ctaRef.current.querySelector('p'), 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // CTA buttons stagger animation
+    gsap.fromTo(ctaRef.current.querySelectorAll('.flex.flex-col > *'), 
+      { opacity: 0, y: 100, scale: 0.8 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+  }, []);
+
+  // Services data
   const services = [
     {
       id: 1,
@@ -61,6 +404,7 @@ const Home = () => {
     }
   ];
 
+  // Stats data
   const stats = [
     { number: "10+", label: "Years Experience" },
     { number: "700+", label: "Installations" },
@@ -72,6 +416,7 @@ const Home = () => {
     { number: "Island+", label: "Island-Wide Service" }
   ];
 
+  // Features data
   const features = [
     {
       icon: "🔒",
@@ -95,49 +440,25 @@ const Home = () => {
     }
   ];
 
-  // Banner slider images
-  const slides = [
-    {
-      image: "/Home/CCTVH2.jpg",
-      title: "Your Complete Security Partner in",
-      subtitle: "Sri Lanka",
-      description: "We offer a comprehensive range of IT and security solutions from computer setup to CCTV systems, ensuring complete protection for your home and business."
-    },
-    {
-      image: "/Oursrvices/alarmsolution.jpg",
-      title: "Professional Alarm Systems &",
-      subtitle: "Security Solutions",
-      description: "Advanced alarm systems and security solutions to protect your property with 24/7 monitoring and instant alerts."
-    }
-  ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(id);
-  }, [slides.length]);
-
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Banner Slider */}
-      <section className="relative text-white">
+      {/* Hero Section - Auto-Passing Banner */}
+      <section ref={heroRef} className="relative text-white">
         <div className="relative h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
-          {slides.map((src, idx) => (
+          {/* Banner slides */}
+          {slides.map((slide, idx) => (
             <img
               key={idx}
-              src={src.image}
+              src={slide.image}
               alt={`Banner ${idx + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'}`}
             />
           ))}
+          
+          {/* Overlay */}
           <div className="absolute inset-0 bg-black/50" />
 
+          {/* Content */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
             <div className="max-w-2xl">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
@@ -166,15 +487,15 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Controls */}
-          <button onClick={prevSlide} aria-label="Previous slide" className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center">
+          {/* Navigation Controls */}
+          <button onClick={prevSlide} aria-label="Previous slide" className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/></svg>
           </button>
-          <button onClick={nextSlide} aria-label="Next slide" className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center">
+          <button onClick={nextSlide} aria-label="Next slide" className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
           </button>
 
-          {/* Dots */}
+          {/* Dots Indicator */}
           <div className="absolute z-10 bottom-5 left-0 right-0 flex justify-center gap-2">
             {slides.map((_, idx) => (
               <button
@@ -189,9 +510,9 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section ref={servicesRef} className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
+          <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Services
             </h2>
@@ -201,41 +522,25 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div 
                 key={service.id} 
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-fade-in-up"
-                style={{animationDelay: `${0.1 * index}s`}}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-105"
               >
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 animate-scale-in"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 animate-fade-in-left">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 animate-fade-in-right text-sm">
-                    {service.description}
-                  </p>
-                  <Link 
-                    to={service.link}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium animate-fade-in-up"
-                  >
-                    Read More
-                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
+                <img src={service.image} alt={service.title} className="w-full h-40 object-cover rounded-t-lg mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Link 
+                  to={service.link}
+                  className="text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors underline"
+                >
+                  Learn More
+                </Link>
               </div>
             ))}
           </div>
           
-          <div className="text-center mt-12 animate-fade-in-up">
+          <div className="text-center mt-12">
             <Link 
               to="/all-services"
               className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
@@ -250,15 +555,15 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section ref={aboutRef} className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-in-left">
+            <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 Your Trusted Partner for Comprehensive Solutions
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                At CCTV Security, we're dedicated to providing innovative and reliable solutions for both domestic and industrial clients in Sri Lanka. With a wide range of services under one roof, we're your one-stop destination for all your IT and security needs.
+                At eSight Technology, we're dedicated to providing innovative and reliable solutions for both domestic and industrial clients in Sri Lanka. With a wide range of services under one roof, we're your one-stop destination for all your IT and security needs.
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 From state-of-the-art security systems to advanced IT solutions, our expertise spans across various industries. Our commitment to excellence ensures that we deliver top-quality services that meet and exceed your expectations.
@@ -266,7 +571,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/about"
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center animate-bounce-in"
+                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center"
                 >
                   Learn More About Us
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -275,7 +580,7 @@ const Home = () => {
                 </Link>
                 <Link 
                   to="/all-services"
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors inline-flex items-center animate-scale-in"
+                  className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors inline-flex items-center"
                 >
                   Explore Our Services
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -284,13 +589,13 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="relative animate-fade-in-right">
+            <div className="relative">
               <img 
                 src="/Techeye/tech1.jpg" 
-                alt="CCTV Security Team" 
-                className="rounded-lg shadow-xl animate-float"
+                alt="eSight Technology Team" 
+                className="rounded-lg shadow-xl"
               />
-              <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-lg animate-bounce-in">
+              <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-lg">
                 <p className="text-2xl font-bold">10+</p>
                 <p className="text-sm">Years of Excellence</p>
               </div>
@@ -300,26 +605,22 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section ref={statsRef} className="py-20 bg-blue-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Our Results
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Why Choose eSight Technology?
             </h2>
-            <p className="text-xl text-blue-100">
-              Your Trusted Partner in IT & Security Solutions
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Our track record speaks for itself
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center animate-fade-in-up" style={{animationDelay: `${0.1 * index}s`}}>
-                <div className="text-3xl lg:text-4xl font-bold text-blue-300 mb-2 animate-bounce-in">
-                  {stat.number}
-                </div>
-                <div className="text-sm lg:text-base text-blue-100 animate-fade-in-down">
-                  {stat.label}
-                </div>
+              <div key={index} className="text-center">
+                <p className="text-4xl font-bold text-blue-300 mb-2">{stat.number}</p>
+                <p className="text-lg text-blue-100">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -327,25 +628,30 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section ref={featuresRef} className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
+          <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Us
+              What Sets Us Apart
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your Trusted Partner in IT & Security Solutions
+              We deliver excellence in every project
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="text-center animate-fade-in-up" style={{animationDelay: `${0.1 * index}s`}}>
-                <div className="text-4xl mb-4 animate-bounce-in">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 animate-fade-in-left">
+              <div 
+                key={index} 
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+              >
+                <div className="text-4xl mb-4 transition-transform duration-300 hover:rotate-12">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 animate-fade-in-right">
+                <p className="text-gray-600">
                   {feature.description}
                 </p>
               </div>
@@ -354,34 +660,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 animate-fade-in-up">
+      {/* Final CTA Section */}
+      <section ref={ctaRef} className="py-20 bg-blue-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Get in touch with us today for a free consultation and quote. Our expert team is ready to help you choose the perfect solution.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <Link 
-              to="/contact"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors animate-bounce-in"
-            >
-              Get Free Quote
-            </Link>
-            <Link 
-              to="/all-services"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors animate-scale-in"
-            >
-              View All Services
-            </Link>
-            <a 
-              href="tel:+94706063010"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors animate-scale-in"
-            >
-              Call Now: +94 70 606 3010
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="transition-transform duration-200 hover:scale-105 active:scale-95">
+              <Link 
+                to="/contact"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+              >
+                Get Free Quote
+              </Link>
+            </div>
+            <div className="transition-transform duration-200 hover:scale-105 active:scale-95">
+              <Link 
+                to="/all-services"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                View All Services
+              </Link>
+            </div>
+            <div className="transition-transform duration-200 hover:scale-105 active:scale-95">
+              <a 
+                href="tel:+94703978967"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                Call Now: +94 703978967
+              </a>
+            </div>
           </div>
         </div>
       </section>

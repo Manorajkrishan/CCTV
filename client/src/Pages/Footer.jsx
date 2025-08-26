@@ -36,16 +36,16 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-6 animate-fade-in-left">
               <img 
                 src="/Home/logo.png" 
-                alt="CCTV Security Logo" 
+                alt="eSight Technology Logo" 
                 className="h-10 w-auto animate-bounce-in"
               />
               <div>
-                <h3 className="text-xl font-bold animate-fade-in-up">CCTV Security</h3>
+                <h3 className="text-xl font-bold animate-fade-in-up">eSight Technology</h3>
                 <p className="text-sm text-gray-400 animate-fade-in-up" style={{animationDelay: '0.1s'}}>Your Complete Security Partner</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              At CCTV Security, we're committed to providing comprehensive electronic security system solutions that safeguard your home or business.
+              At eSight Technology, we're committed to providing comprehensive electronic security system solutions that safeguard your home or business.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -131,9 +131,10 @@ const Footer = () => {
             <div className="mt-6 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <h5 className="text-sm font-semibold text-white mb-3">Contact Info</h5>
               <div className="space-y-2 text-sm text-gray-300">
-                <p className="animate-fade-in-left" style={{animationDelay: '0.6s'}}>📞 +94 70 606 3010</p>
-                <p className="animate-fade-in-left" style={{animationDelay: '0.7s'}}>✉️ sales@cctvsecurity.lk</p>
-                <p className="animate-fade-in-left" style={{animationDelay: '0.8s'}}>📍 Bandiyamulla, 397 Colombo Rd, Gampaha 11000, Sri Lanka</p>
+                <p className="animate-fade-in-left" style={{animationDelay: '0.6s'}}>📞 +94 703978967</p>
+                <p className="animate-fade-in-left" style={{animationDelay: '0.7s'}}>📞 +94 703978968</p>
+                <p className="animate-fade-in-left" style={{animationDelay: '0.8s'}}>✉️ info@cctvsecurity.lk</p>
+                <p className="animate-fade-in-left" style={{animationDelay: '0.9s'}}>📍 Bandiyamulla, 397 Colombo Rd, Gampaha 11000, Sri Lanka</p>
               </div>
             </div>
           </div>
@@ -145,7 +146,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400 animate-fade-in-left">
-              © {currentYear} CCTV Security. All rights reserved.
+              © {currentYear} eSight Technology. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-gray-400 animate-fade-in-right">
               <a href="#" className="hover:text-white transition-colors hover:translate-x-1 inline-block transition-transform duration-300">

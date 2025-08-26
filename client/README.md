@@ -1,4 +1,4 @@
-# CCTV Security Company Website
+# eSight Technology Company Website
 
 A modern, responsive website for a CCTV security company built with React, Tailwind CSS, and Vite. This website is similar to [TechEye.lk](https://techeye.lk/) and showcases comprehensive security solutions.
 
